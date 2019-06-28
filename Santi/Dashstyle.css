@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    font-family: "helvetica";
+}
+#topbar{
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: #3c3c3c;
+}
+#icon{
+    height: 100%;
+    width: 60px;
+    display: inline-block;
+}
+#sort{
+    height: 100%;
+    width: 300px;
+    display: inline-block;
+}
+#upload{
+    height: 100%;
+    width: 60px;
+    display: inline-block;
+}
+#logout{
+    height: 100%;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    right: 0px;
+}
+#container{
+    
+}
+#chart_container{
+    
+}
+
+.item:hover{
+    background-color: #4c4c4c;
+}
