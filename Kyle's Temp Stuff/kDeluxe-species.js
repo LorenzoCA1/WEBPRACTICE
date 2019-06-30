@@ -2,11 +2,11 @@
 
 
 function addData(data) {
-    console.log(data.burger_by_species['Krusty Combo'])
+    console.log(data.burger_by_species['Krusty Deluxe'])
     
-    let bObj = data.burger_by_species['Krusty Combo']
+    let bObj = data.burger_by_species['Krusty Deluxe']
     
-    console.log(bObj)
+    //console.log(bObj)
     console.log(bObj.coral)
     console.log(bObj['giant clam'])
     console.log(bObj['gray whale'])
@@ -41,7 +41,7 @@ function addData(data) {
         options: {
             title: {
                 display: true, 
-                text: 'Krusty Combo Sales per Species'
+                text: 'Krusty Deluxe Sales per Species'
             }
         }
     })
