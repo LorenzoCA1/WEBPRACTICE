@@ -47,12 +47,20 @@ body{
     width: 100%;
     height: 260px;
 }
+canvas{
+    height: 100%;
+    width: 50%;
+}
 #graph{
     height: 220px;
     width: 400px;
     display: inline-block;
     margin: 10px;
     background-color: silver;
+}
+#expanded_graph{
+    background-color: lightgray;
+    max-width: 100%;
 }
 #table_container{
     background-color: lightgray;

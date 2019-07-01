@@ -1,6 +1,7 @@
 <html>
     <head>
         <link href="Dashstyle.css" rel="stylesheet" type="text/css" />
+        
     </head>
     <body>
         <div id="topbar">
@@ -16,15 +17,24 @@
         <div id="filler"></div>
         <div id="container">
             <div id="graph_container">
-                <div id="graph">graph content</div>
-                <div id="graph">graph content</div>
-                <div id="graph">graph content</div>
-                <div id="graph">graph content</div>
-                <div id="graph">graph content</div>
+                <div id="graph">
+                    <!--<canvas id="myChart"></canvas>-->
+                </div>
+                <div id="graph">
+                    <!--<canvas id="myChart"></canvas>-->
+                </div>
+                <div id="graph"></div>
+            </div>
+            <div id="expanded_graph">
+                <!--<canvas id="myChart"></canvas>-->
             </div>
             <div id="table_container">
                 table content
             </div>
         </div>
+        <script src="Dashscript.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" type="text/javascript"></script>
+        <script src="jTable.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     </body>
 </html>
