@@ -11,7 +11,8 @@ function clicked() {
 		if(pass.value == corpass) {
 		
 			window.alert("You are logged in as " + user.value);
-			window.open("http://google.com");
+			//window.open("http://google.com");
+			window.location.href="Dashboard.html";
 		
 		} else {
 		
