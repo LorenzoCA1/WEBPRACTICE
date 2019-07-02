@@ -51,7 +51,7 @@ canvas{
     height: 100%;
     width: 50%;
 }
-#graph{
+.graph{
     height: 220px;
     width: 400px;
     display: inline-block;
