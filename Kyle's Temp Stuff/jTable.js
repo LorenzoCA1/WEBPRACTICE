@@ -43,7 +43,7 @@
                             'rgba(255, 206, 86, 1)'
                         ],
                     options: {
-                        esponsive: true,
+                        responsive: true,
                         maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
