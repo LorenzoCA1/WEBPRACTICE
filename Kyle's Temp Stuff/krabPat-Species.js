@@ -39,6 +39,7 @@ function addData(data) {
             }]
         },
         options: {
+            responsive: true, 
             title: {
                 display: true, 
                 text: 'Krabby Pattie Sales per Species'
