@@ -1,23 +1,21 @@
 //dashboard js
 var home = document.getElementById("icon");
-var chart1 = document.getElementById("g1");
-var chart2 = document.getElementById("g2");
 var graphcontainer = document.getElementById("graph_container");
-var c1 = 0;
-var c2 = 0;
-var container = 0; //0 = small, 1 = large
+var expand = 0; //0 = small, 1 = large
 
 home.onclick = function(){
     $("html, body").animate({scrollTop: 0}, 250);
 }
-chart1.onclick=function(){
-    if(container == 0){
+graphcontainer.onclick=function(){
+    if(expand == 0){
         $("#graph_container").css('height', '480px');
-        container = 1;
+        expand = 1;
+        $("html, body").animate({scrollTop: 0}, 250);
     }
     else{
         $("#graph_container").css('height', '260px');
-        container = 0;
+        expand = 0;
+        $("html, body").animate({scrollTop: 0}, 250);
     }
 }
 
@@ -68,7 +66,7 @@ function addData(data){
                 'rgba(255, 206, 86, 1)'
             ],
         options: {
-            esponsive: true,
+            responsive: true,
             maintainAspectRatio: false,
             scales: {
                 yAxes: [{
@@ -154,11 +152,107 @@ function addData(data){
             }
         }
     })
+    
+    //donut deluxe
+    console.log(data.burger_by_species['Krusty Deluxe'])
+    
+    let bObj = data.burger_by_species['Krusty Deluxe']
+    
+    //console.log(bObj)
+    console.log(bObj.coral)
+    console.log(bObj['giant clam'])
+    console.log(bObj['gray whale'])
+    console.log(bObj['leatherback turtle'])
+    console.log(bObj.salmon)
+    console.log(bObj['sea lion'])
+    console.log(bObj.seahorse)
+    
+    var ctx = document.getElementById('myChart3')      
+    
+    var num1 = bObj.coral
+    var num2 = bObj['giant clam']
+    var num3 =bObj['gray whale']
+    var num4 =bObj['leatherback turtle']
+    var num5 =bObj.salmon
+    var num6 =bObj['sea lion']
+    var num7 =bObj.seahorse
+    
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Coral', 'Giant Clam', 'Gray Whale', 'Leatherback Turtle',
+                    'Salmon', 'Sea Lion', 'Seahorse'],
+            datasets: [{
+                backgroundColor: ['coral', 'rgb(30, 157, 147)', '#645353', 'rgb(77, 77, 39)', 'salmon', 'aqua', 'purple'],
+                data: [num1, num2, num3, num4, num5, num6, num7],
+                borderColor: ['black', 'black','black','black','black','black',
+                             'black'],
+                borderWidth: [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
+            }]
+        },
+        options: {
+            responsive: true, 
+            title: {
+                display: true, 
+                text: 'Krusty Deluxe Sales per Species'
+            }
+            
+        }
+    })
+    
+    //donut combo
+    console.log(data.burger_by_species['Krusty Combo'])
+    
+    let bObj2 = data.burger_by_species['Krusty Combo']
+    
+    console.log(bObj2)
+    console.log(bObj2.coral)
+    console.log(bObj2['giant clam'])
+    console.log(bObj2['gray whale'])
+    console.log(bObj2['leatherback turtle'])
+    console.log(bObj2.salmon)
+    console.log(bObj2['sea lion'])
+    console.log(bObj2.seahorse)
+    
+    var ctx = document.getElementById('myChart4')      
+    
+    var num1 = bObj2.coral
+    var num2 = bObj2['giant clam']
+    var num3 =bObj2['gray whale']
+    var num4 =bObj2['leatherback turtle']
+    var num5 =bObj2.salmon
+    var num6 =bObj2['sea lion']
+    var num7 =bObj2.seahorse
+    
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Coral', 'Giant Clam', 'Gray Whale', 'Leatherback Turtle',
+                    'Salmon', 'Sea Lion', 'Seahorse'],
+            datasets: [{
+                backgroundColor: ['coral', 'rgb(30, 157, 147)', '#645353', 'rgb(77, 77, 39)', 'salmon', 'aqua', 'purple'],
+                data: [num1, num2, num3, num4, num5, num6, num7],
+                borderColor: ['black', 'black','black','black','black','black',
+                             'black'],
+                borderWidth: [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
+            }]
+        },
+        options: {
+            responsive: true, 
+            title: {
+                display: true, 
+                text: 'Krusty Combo Sales per Species'
+            }
+        }
+    })
 }
         
         
             
 $(document).ready(function() {
     $.getJSON("krustykrab.json", addData)
+    
+    var table
+    table = $("#table").DataTable()
 })
         
