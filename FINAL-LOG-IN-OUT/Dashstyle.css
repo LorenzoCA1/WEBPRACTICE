@@ -8,6 +8,7 @@ body{
     position: fixed;
     background-color: #3c3c3c;
     text-align: justify;
+    z-index: 99 !important;
 }
 #icon{
     height: 100%;
@@ -46,6 +47,11 @@ body{
     white-space: nowrap;
     width: 100%;
     height: 260px;
+    transition: all 0.1s linear;
+}
+canvas{
+    height: 100%;
+    width: 50%;
 }
 #graph{
     height: 220px;
@@ -56,9 +62,9 @@ body{
 }
 #table_container{
     background-color: lightgray;
-    width: 90%;
+    width: 100%;
     min-height: 1000px;
-    margin: 5%;
+    margin-top: 5px;
 }
 
 .item:hover{
