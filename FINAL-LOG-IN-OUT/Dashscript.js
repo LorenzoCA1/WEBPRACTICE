@@ -333,6 +333,7 @@ function addData(data){
         
             
 $(document).ready(function() {
+    
     $.getJSON("krustykrab.json", addData)
     
     table = $("#table").DataTable()
