@@ -3,6 +3,7 @@ var home = document.getElementById("icon");
 var graphcontainer = document.getElementById("graph_container");
 var logout = document.getElementById("logout");
 var expand = 0; //0 = small, 1 = large
+var table
 
 home.onclick = function(){
     $("html, body").animate({scrollTop: 0}, 250);
@@ -249,6 +250,84 @@ function addData(data){
             }
         }
     })
+    
+    
+    //pattie
+    console.log(data.burger_by_species['Krabby Pattie'])
+    
+    let bObj3 = data.burger_by_species['Krabby Pattie']
+    
+    console.log(bObj3)
+    console.log(bObj3.coral)
+    console.log(bObj3['giant clam'])
+    console.log(bObj3['gray whale'])
+    console.log(bObj3['leatherback turtle'])
+    console.log(bObj3.salmon)
+    console.log(bObj3['sea lion'])
+    console.log(bObj3.seahorse)
+    
+    var ctx = document.getElementById('myChart5')      
+    
+    var num1 = bObj3.coral
+    var num2 = bObj3['giant clam']
+    var num3 =bObj3['gray whale']
+    var num4 =bObj3['leatherback turtle']
+    var num5 =bObj3.salmon
+    var num6 =bObj3['sea lion']
+    var num7 =bObj3.seahorse
+    
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Coral', 'Giant Clam', 'Gray Whale', 'Leatherback Turtle',
+                    'Salmon', 'Sea Lion', 'Seahorse'],
+            datasets: [{
+                backgroundColor: ['coral', 'rgb(30, 157, 147)', '#645353', 'rgb(77, 77, 39)', 'salmon', 'aqua', 'purple'],
+                data: [num1, num2, num3, num4, num5, num6, num7],
+                borderColor: ['black', 'black','black','black','black','black',
+                             'black'],
+                borderWidth: [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
+            }]
+        },
+        options: {
+            responsive: true, 
+            title: {
+                display: true, 
+                text: 'Krabby Pattie Sales per Species'
+            }
+        }
+    })
+    
+    //table
+    let bObj4 = data.sales
+    
+    console.log(bObj4)
+    
+    var arr = $.map(bObj4, function(el) {
+        return el
+    })
+    
+    console.log(arr[0].datetime)
+    console.log(arr[0].burger)
+    console.log(arr[0].species)
+    
+    var i 
+    var length = arr.length
+    console.log(length)
+    for(i = 0; i < length; i++) {
+        let time
+        let burger
+        let species
+        
+        time = arr[i].datetime
+        burger = arr[i].burger
+        species = arr[i].species
+        table.row.add([
+            time,
+            burger,
+            species
+        ]).draw(true)
+    }
 }
         
         
@@ -256,7 +335,6 @@ function addData(data){
 $(document).ready(function() {
     $.getJSON("krustykrab.json", addData)
     
-    var table
     table = $("#table").DataTable()
 })
         

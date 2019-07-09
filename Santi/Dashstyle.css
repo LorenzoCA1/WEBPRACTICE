@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: "helvetica";
+    background-color: #3c3c3c;
 }
 #topbar{
     height: 60px;
@@ -53,7 +54,7 @@ canvas{
     height: 100%;
     width: 50%;
 }
-#graph{
+.graph{
     height: 220px;
     width: 400px;
     display: inline-block;
@@ -64,7 +65,7 @@ canvas{
     background-color: lightgray;
     width: 100%;
     min-height: 1000px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .item:hover{
