@@ -1,8 +1,10 @@
 //dashboard js
 var home = document.getElementById("icon");
 var graphcontainer = document.getElementById("graph_container");
+var darkbutton = document.getElementById("dark");
 var logout = document.getElementById("logout");
 var expand = 0; //0 = small, 1 = large
+var dark = 0;
 var table
 
 home.onclick = function(){
@@ -22,6 +24,18 @@ graphcontainer.onclick=function(){
 }
 logout.onclick = function(){
     window.location.href="logout.html";
+}
+darkbutton.onclick = function(){
+    if(dark == 0){
+        dark = 1;
+        $("body").css('background-color', '#5F5F5F');
+        $("#dark").css('content', 'url(night%202.png)');
+    }
+    else{
+        dark = 0;
+        $("body").css('background-color', '#1FB6E1');
+        $("#dark").css('content', 'url(night%201.png)');
+    }
 }
 
 //graph js
