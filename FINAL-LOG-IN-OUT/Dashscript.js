@@ -3,6 +3,7 @@ var home = document.getElementById("icon");
 var graphcontainer = document.getElementById("graph_container");
 var darkbutton = document.getElementById("dark");
 var logout = document.getElementById("logout");
+var upload = document.getElementById("upload")
 var expand = 0; //0 = small, 1 = large
 var dark = 0;
 var table
@@ -10,6 +11,13 @@ var table
 home.onclick = function(){
     $("html, body").animate({scrollTop: 0}, 250);
 }
+
+
+upload.onclick = function() {
+    $('#uplFile').trigger('click')
+}
+
+
 graphcontainer.onclick=function(){
     if(expand == 0){
         $("#graph_container").css('height', '480px');
@@ -348,8 +356,9 @@ function addData(data){
             
 $(document).ready(function() {
     
+
+
     $.getJSON("krustykrab.json", addData)
     
     table = $("#table").DataTable()
 })
-        
